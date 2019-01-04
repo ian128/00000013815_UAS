@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="theme.css" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+SC" rel="stylesheet">
+  <script src="lib/jquery-3.1.1.js"></script>
+  <script src="lib/js-sha256.js"></script>
+  <script src="lib/bootstrap-bundle.js"></script>
+  <script src="lib/jquery-ui.min.js"></script>
+  <script src="lib/angularjs1.7.5.min.js"></script>
+  <script src="lib/halaman1.js"></script>
+  <script src="lib/starterkit.js"></script>
+</head>
+
+<body ng-app="app" ng-controller="FrontController">
+  <div class="text-center text-white h-100" style="position: relative; overflow: hidden;"> <video autoplay="false" loop="" muted="" plays-inline="" style="position: absolute; right: 0; top: 0; min-width:100%; min-height: 100%; z-index: -100;">
+      <source src="source/hal1/videos/cloud.mp4" type="video/mp4"> </video>
+    <div class="container h-100">
+      <div class="row h-100 py-5">
+        <div class="col-lg-8 col-md-10 mx-auto my-1">
+          <h1 class="mb-4 display-3 MouseHoverFadeAnimation" id="title">WeatherLoc</h1>
+          <div class="mx-auto bg-white p-4 w-100 col-11 col-md-9 MouseHoverFadeAnimation animate-in-up" style="	border-bottom-left-radius: 30px;	border-bottom-right-radius: 30px;	border-top-right-radius: 30px;	box-shadow: 0px 0px 64px -16px black;	opacity: 0.9;	border-top-left-radius: 30px;" id="login">
+            <h3 class="mb-3 py-1 text-center bg-primary" style="border-top-left-radius: 30px;	border-bottom-left-radius: 30px;	border-top-right-radius: 30px;	border-bottom-right-radius: 30px;" id="statusBar">Welcome</h3>
+            <form id="LetsLogin">
+              <div class="form-group"> <input type="text" class="form-control" placeholder="Enter Username" id="username" ng-model="username"> </div>
+              <div class="input-group w-100">
+                <input type="password" class="form-control" id="password" placeholder="Password" ng-model="password">
+                <div class="input-group-append"><button class="btn btn-secondary" type="button" ng-click="togglePassword()"><i class="fa fa-eye"></i></button></div>
+              </div>
+              <div id="LoginButtonArea" class="p-2">
+                <button type="submit" class="btn btn-primary" ng-click="Login()"><i class="fa fa-sign-in"></i> Submit</button>
+              </div>
+            </form>
+            <div class="row p-1">
+              <div class="col-md-12">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="progress" style="height:40px;">
+                      <div class="progress-bar progress-bar-animated progress-bar-striped text-center bg-secondary" role="progressbar" style="width:100%">100%</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

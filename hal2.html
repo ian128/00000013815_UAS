@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="theme.css" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+SC" rel="stylesheet">
+  <script src="lib/jquery-3.1.1.js"></script>
+  <script src="lib/jQueryRotate.js"></script>
+  <script src="lib/bootstrap-bundle.js"></script>
+  <script src="lib/jquery-ui.min.js"></script>
+  <script src="lib/angularjs1.7.5.min.js"></script>
+  <script src="lib/angular-route.js"></script>
+  <script src="lib/halaman2.js"></script>
+</head>
+
+<body ng-app="app" ng-controller="DashboardController">
+  <div style="height: 100%;	overflow-y: scroll;	background-image: linear-gradient(to bottom, rgba(0, 100, 100, .75), rgba(0, 0, 0, .75)), url(&quot;source/hal2/gambar/city.png&quot;);	background-position: center center, center center;	background-size: cover, cover;	background-repeat: none, none;	background-attachment: fixed;" class="w-100">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light z-index:8; sticky-top">
+      <div class="container"> <a class="navbar-brand text-primary" href="#">
+          <i class="fa d-inline fa-lg fa-circle-o"></i>
+          <b>WeatherLoc</b>
+        </a> <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbar5">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar5">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" id="time">Time</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#!aboutme" ng-click="showAboutMe()">About</a>
+            </li>
+          </ul> <a class="btn btn-outline-primary navbar-btn ml-md-2" ng-click="logout()"><i class="fa d-inline fa-sign-out fa-lg"></i> Logout</a>
+        </div>
+      </div>
+    </nav>
+    <div class="text-center text-white align-items-center d-flex m-0 w-100 p-3" style="">
+      <div class="container w-100 px-0 pt-1" id="mainBox">
+        <h4 id="title" class="">Hello there! Have you checked the weather today near Gading Serpong?</h4>
+        <div class="row">
+          <div class="col-12 col-lg-4 p-2 col-md-6" style="" ng-repeat="x in WeatherData track by $index">
+            <div class="card p-2" style="	border-top-left-radius: 5px;	border-top-right-radius: 5px;	border-bottom-left-radius: 5px;"> <img class="card-img-top" src="{{x.picture}}">
+              <div class="card-body p-2">
+                <div class="my-1 mx-auto p-1" style="	border-color: #ffffff;	background-image: linear-gradient(to bottom, rgb(44, 82, 140, 1.0), rgba(44, 82, 140,1.0));	background-position: top left;	background-size: 100%;	background-repeat: repeat;	border-top-left-radius: 10px;	border-bottom-left-radius: 10px;	border-top-right-radius: 10px;	border-bottom-right-radius: 10px;">
+                  <div class="row" id="TableDetails">
+                    <div class="col-md-12">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <img src="{{'http://openweathermap.org/img/w/'+x.weather[0].icon+'.png'}}" width="48">
+                          <h3>
+                            {{x.name}}
+                          </h3>
+                        </div>
+                      </div>
+                      <div class="table-responsive m-0">
+                        <table class="table table-bordered table-hover">
+                          <tbody>
+                            <tr>
+                              <th colspan="2">Weather Description</th>
+                            </tr>
+                            <tr>
+                              <td colspan="2">{{x.weather[0].description}}</td>
+                            </tr>
+                            <tr>
+                              <th>Latitude</th>
+                              <td>{{x.coord.Lat}}</td>
+                            </tr>
+                            <tr>
+                              <th>Longitude</th>
+                              <td>{{x.coord.Lon}}</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <!--
+              <div class="row">
+                <div class="col-md-4 col-lg-3">
+                  <h5 class="">Time</h5>
+                </div>
+                <div class="col-md-8 col-lg-9">
+                  <h3 class="" id="time" >{{time}}</h3>
+                </div>
+              </div>
+							-->
+                    </div>
+                  </div>
+                  <a class="btn mx-1 btn-light" href="#!details" ng-click="showWeatherData($index)"> <i class="fa d-inline fa-lg fa-info-circle"></i> Details</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center text-white align-items-center d-flex">
+      <div class="container w-100 py-4" id="weatherDetail" ng-view="">
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

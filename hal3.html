@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="theme.css" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+SC" rel="stylesheet">
+  <link rel="stylesheet" href="theme.css" type="text/css">
+</head>
+
+<body>
+  <div class="text-center text-white align-items-center d-flex w-100 h-100 p-3" style="	background-image: linear-gradient(to bottom, rgba(50, 20, 5, .5), rgba(0, 0, 0, 1.0)), url(&quot;source/hal2/gambar/city.png&quot;);	background-position: center center, center center;	background-size: cover, cover;	background-repeat: none, none;	background-attachment: fixed;	border-top-left-radius: 20px;	border-top-right-radius: 20px;	border-bottom-left-radius: 20px;	border-bottom-right-radius: 20px;">
+    <div class="w-100 container" id="mainBox" ng-model="oneCity">
+      <div class="row">
+        <div class="col-md-12">
+          <h3 id="title" class="" style="	min-height: 10%;	max-height: 10%;">Weather Details for {{oneCity.name}}</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-4" style="">
+          <h6 class=""> <i class="fa d-inline fa-lg fa-arrows-v"></i> Latitude</h6>
+        </div>
+        <div class="col-md-6 col-8">
+          <h5 class="">{{oneCity.coord.Lat}}</h5>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-4">
+          <h6 class=""> <i class="fa d-inline fa-lg fa-arrows-h"></i> Longitude</h6>
+        </div>
+        <div class="col-md-6 col-8">
+          <h5 class="">{{oneCity.coord.Lon}}</h5>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-4">
+          <h6 class="">
+            <i class="fa d-inline fa-lg fa-thermometer-half"></i> Temperature</h6>
+        </div>
+        <div class="col-md-6 col-8">
+          <h5 class="">{{oneCity.main.temp+'℃'}}</h5>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-4" style="">
+          <h6 class=""> <i class="fa d-inline fa-lg fa-thermometer-empty"></i> Temperature Min.</h6>
+        </div>
+        <div class="col-md-6 col-8" style="">
+          <h5 class="" style="">{{oneCity.main.temp_min+'℃'}}</h5>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-4" style="">
+          <h6 class=""> <i class="fa d-inline fa-lg fa-thermometer-full"></i> Temperature Max.</h6>
+        </div>
+        <div class="col-md-6 col-8" style="">
+          <h5 class="">{{oneCity.main.temp_max+'℃'}}</h5>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-4">
+          <h6 class=""> <i class="fa d-inline fa-lg fa-tint"></i> Humidity</h6>
+        </div>
+        <div class="col-md-6 col-8">
+          <h5 class="" style="">{{oneCity.main.humidity+"%"}}</h5>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-4">
+          <h6 class="">
+            <i class="fa d-inline fa-lg fa-superpowers"></i> Wind Speed</h6>
+        </div>
+        <div class="col-md-6 col-8">
+          <h5 class="">{{oneCity.wind.speed+"m/s"}}</h5>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12"><a class="btn btn-primary btn-block" ng-click="hideWeatherData()"><i class="fa d-inline fa-lg fa-chevron-circle-left "></i> Return</a></div>
+      </div>
+    </div>
+  </div>
+  <script>
+    if (getCookie('keyAccess') == "") {
+      alert("Please Login")
+      localStorage.clear();
+      window.location.href = "hal1.html"
+    }
+
+    function getCookie(cname) {
+      var name = cname + "=";
+      var ca = document.cookie.split(';');
+      for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+          c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+          return c.substring(name.length, c.length);
+        }
+      }
+      return "";
+    }
+  </script>
+  
+ </body>
+
+</html>
