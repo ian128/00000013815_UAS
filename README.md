@@ -5,4 +5,4 @@ Login dengan username "user",
 password "uaspti"
 
 Klik dibawah untuk memulai
-#hal1.html
+https://ian128.github.io/hal1.html
