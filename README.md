@@ -1,6 +1,6 @@
 <html>
 <body>
-  <p> Final Project for Front-End Web Development Course </p>
+  <p> Final Project for Front-End Web Development Course </p> <br>
   <p>
 Login dengan username "user", <br>
 password "uaspti"
