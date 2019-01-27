@@ -5,7 +5,7 @@
     <div>
   <p> Final Project for Front-End Web Development Course : WeatherLoc</p>
   <p>
-Library utama : AngularJS, jQuery, Bootstrap, jQueryUI (Hanya dapat berfungsi melalui komputer) <br>
+Library utama : AngularJS, jQuery, Bootstrap, jQueryUI<br>
 Login dengan username "user", <br>
 password "uaspti"
   </p>
