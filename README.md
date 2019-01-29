@@ -10,7 +10,17 @@ Login dengan username "user", <br>
 password "uaspti"
   </p>
 <p>
-<a href="https://ian128.github.io/hal1.html"> Klik Disini untuk memulai </a>
+<a href="https://ian128.github.io/weatherloc/hal1.html"> Klik Disini untuk memulai </a>
+</p>
+    </div>
+    <div>
+  <p> To Do list</p>
+  <p>
+Berbasis AngularJS dan
+Menggunakan localStorage
+  </p>
+<p>
+<a href="https://ian128.github.io/todolist"> Klik Disini untuk memulai </a>
 </p>
     </div>
   </div>
