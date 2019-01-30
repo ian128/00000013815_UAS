@@ -17,7 +17,7 @@ $(document).ready(()=>{
 	if(getCookie('keyAccess') == ""){
 		localStorage.clear();
 		alert("Please Login")
-		window.location.href="hal1.html"
+		window.location.href="index.html"
 	}
 	
 	$("#title").slideUp(0)

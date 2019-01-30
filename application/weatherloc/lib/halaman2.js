@@ -31,7 +31,7 @@ $(document).ready(()=>{
 	if(getCookie('keyAccess') == ""){
 		alert("You are not logged in, please login again")
 		$("body").fadeOut(2000,()=>{
-			window.location.href="hal1.html"
+			window.location.href="index.html"
 		})
 	}
 	
@@ -132,7 +132,7 @@ app.controller('DashboardController',($scope,$timeout)=>{
     	}
     	localStorage.clear();
 		$("body").fadeOut(2000,()=>{
-			window.location.href="hal1.html"
+			window.location.href="index.html"
 		})
 	}
 })
