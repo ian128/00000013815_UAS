@@ -6552,7 +6552,8 @@ body > * {
 
 /* Animate state between .navbar and .navbar-ontop */
 .navbar {
-  transition: background-color .5s ease-out; }
+  transition: background-color .5s ease-out;
+  height: 40px; }
 
 .navbar-ontop {
   background-color: transparent !important; }
