@@ -40,6 +40,8 @@ function getCookie(cname) {
 
 var app = angular.module("app", []); 
 app.controller('FrontController',($scope,$timeout,$http)=>{
+	$scope.username="user"
+	$scope.password="uaspti"
 	$scope.Login=()=>{
 		$("button[type='submit']").prop('disabled', true);
 		$("div[role='progressbar'").html("<h5>Please Wait</h5>")
